@@ -8,7 +8,7 @@ export default function ProductScreen(props) {
     const [products, setProducts] = useState([]);
     useEffect(() =>{
         const fetchData = async () =>{
-            const {data} = await axios.get('https://frontdrogstore.herokuapp.com/api/products');
+            const {data} = await axios.get('https://drogstorebackend.herokuapp.com/api/products');
             setProducts(data);
         };
         fetchData();
