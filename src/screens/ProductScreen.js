@@ -8,7 +8,7 @@ export default function ProductScreen(props) {
     const [products, setProducts] = useState([]);
     useEffect(() =>{
         const fetchData = async () =>{
-            const {data} = await axios.get('/api/products');
+            const {data} = await axios.get('https://frontdrogstore.herokuapp.com/api/products');
             setProducts(data);
         };
         fetchData();
@@ -17,7 +17,7 @@ export default function ProductScreen(props) {
     const product = products.find((x) => x._id === props.match.params.id);
     const [qty, setQty] = useState(1);
     const addToCartHandler = () =>{
-        props.history.push(`/cart/${productId}?qty=${qty}`);
+        props.history.push(`https://frontdrogstore.herokuapp.com/cart/${productId}?qty=${qty}`);
     };
     if (!product) {
         return <div></div>;
